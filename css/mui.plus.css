@@ -40,6 +40,7 @@
 .mui-popup-inner .mui-popup-alert-image-button{
 	height: 20px;
 	width: 20px;
+	margin-top: 10px;
 }
 
 .mui-popup .mui-popup-inner-image-alert{
@@ -47,4 +48,41 @@
 }
 .mui-popup  .mui-popup-inner-image-alert:after {
 	height: 0px;
+}
+
+/**
+ * 带图片选择弹框的样式
+ */
+.mui-popup:has(.mui-popup-confirm-image-select){
+	
+}
+
+.mui-popup-inner .mui-popup-confirm-image-select{
+	position: relative;
+	width: 240px;
+	padding: 15px 0px;
+	display: flex;
+	justify-content: space-between;
+}
+.mui-popup-inner .mui-popup-image-select{
+	max-width: 240px;
+}
+
+.mui-popup-inner .mui-popup-image-select img{
+	max-height: 250px;
+	max-width: 115px;
+	border-radius: 5px;
+}
+.mui-popup-inner .mui-input-row {
+   height: initial;
+}
+.mui-popup-inner .mui-popup-confirm-image-select .mui-radio input[type=radio] {
+	position: initial;
+}
+.mui-popup-inner .mui-popup-confirm-image-select .mui-radio input[type=radio]:before{
+	content: '\e411';
+}
+.mui-popup-inner .mui-popup-confirm-image-select .mui-radio input[type=radio]:checked:before{
+	content: '\e442';
+	color: #469237;
 }

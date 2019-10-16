@@ -4,13 +4,68 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title></title>
-    <script src="js/mui.min.js"></script>
     <link href="css/mui.min.css" rel="stylesheet"/>
-    <script type="text/javascript" charset="utf-8">
-      	mui.init();
-    </script>
+	<link href="css/mui.plus.css" rel="stylesheet" />
+    <style>
+		.mui-content button:first-child{
+			margin-top: 50px !important;
+		}
+		button{
+			margin-top: 15px;
+			width: 80% !important;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 10px 0 !important;
+		}
+	</style>
 </head>
 <body>
-	
+	<header class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">mui-plus-demo</h1>
+	</header>
+	<div class="mui-content">
+		
+		<button class="mui-btn mui-btn-block mui-btn-primary" onclick="showImageSelectConfirm()">图片选择弹框</button>
+		<button class="mui-btn mui-btn-block mui-btn-primary" onclick="showImageAlert()">图片弹框</button>
+		<button class="mui-btn mui-btn-block mui-btn-primary" onclick="showImageConfirm()">图片确认弹框</button>
+		<button class="mui-btn mui-btn-block mui-btn-primary" onclick="showselect()">选择列表弹框</button>
+	</div>
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.plus.js"></script>
+	<script type="text/javascript" charset="utf-8">
+	  	mui.init();
+		mui.plusReady(function () {
+		    
+		});
+		
+		function showImageConfirm(){
+			var src = "https://pic4.zhimg.com/v2-8ee37445dc58e54a1082155aa71bea59_qhd.jpg";
+			mui.imageConfirm(src,'这是一个图片确认弹框','提示',['取消','确认'],function (e) {
+				console.log(JSON.stringify(e));
+			},'div');
+		}
+		
+		function showImageAlert(){
+			var src = "https://pic4.zhimg.com/v2-8ee37445dc58e54a1082155aa71bea59_qhd.jpg";
+			mui.imageAlert(src,function (e) {
+				console.log(JSON.stringify(e));
+			});
+		}
+		function showImageSelectConfirm(){
+			var src1 = "https://pic4.zhimg.com/v2-8ee37445dc58e54a1082155aa71bea59_qhd.jpg";
+			var src2 = "https://pic2.zhimg.com/v2-27d341ffc14f7439b087ee7731e60309_qhd.jpg";
+			var src = [src1,src2];
+			mui.imagesSelectConfirm(src,'这是一个图片选择确认弹框','提示',function (e) {
+				console.log(JSON.stringify(e));
+				console.log(src[e.index]);
+			},'div');
+		}
+		function showselect(){
+			var items = ['哈哈','嘿嘿','嘻嘻'];
+			mui.select(items,function(e){
+				console.log(JSON.stringify(e));
+			});
+		}
+	</script>
 </body>
 </html>
