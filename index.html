@@ -29,6 +29,7 @@
 		<button class="mui-btn mui-btn-block mui-btn-primary" onclick="showImageAlert()">图片弹框</button>
 		<button class="mui-btn mui-btn-block mui-btn-primary" onclick="showImageConfirm()">图片确认弹框</button>
 		<button class="mui-btn mui-btn-block mui-btn-primary" onclick="showselect()">选择列表弹框</button>
+		<button class="mui-btn mui-btn-block mui-btn-primary" onclick="showLoading()">前端加载框</button>
 	</div>
 	<script src="js/mui.min.js"></script>
 	<script src="js/mui.plus.js"></script>
@@ -65,6 +66,13 @@
 			mui.select(items,function(e){
 				console.log(JSON.stringify(e));
 			});
+		}
+		
+		function showLoading(){
+			mui.showLoading("加载中...", "div");
+			/* setTimeout(function() {
+				mui.hideLoading(function(){});
+			}, 2000); */
 		}
 	</script>
 </body>
