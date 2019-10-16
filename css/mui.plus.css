@@ -53,24 +53,25 @@
 /**
  * 带图片选择弹框的样式
  */
-.mui-popup:has(.mui-popup-confirm-image-select){
-	
-}
-
 .mui-popup-inner .mui-popup-confirm-image-select{
 	position: relative;
 	width: 240px;
 	padding: 15px 0px;
-	display: flex;
-	justify-content: space-between;
+	text-align: center;
+	white-space: nowrap;
+	overflow-x: auto;
+	-webkit-overflow-scrolling:touch !important;
 }
 .mui-popup-inner .mui-popup-image-select{
-	max-width: 240px;
+	margin-left: 3px;
+	margin-right: 3px;
+	max-width: 114px;
+	display: inline-block;
 }
 
 .mui-popup-inner .mui-popup-image-select img{
 	max-height: 250px;
-	max-width: 115px;
+	max-width: 114px;
 	border-radius: 5px;
 }
 .mui-popup-inner .mui-input-row {

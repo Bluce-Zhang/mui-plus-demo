@@ -54,7 +54,7 @@
 		function showImageSelectConfirm(){
 			var src1 = "https://pic4.zhimg.com/v2-8ee37445dc58e54a1082155aa71bea59_qhd.jpg";
 			var src2 = "https://pic2.zhimg.com/v2-27d341ffc14f7439b087ee7731e60309_qhd.jpg";
-			var src = [src1,src2];
+			var src = [src1,src2,src1,src2,src1,src2,src1,src2];
 			mui.imagesSelectConfirm(src,'这是一个图片选择确认弹框','提示',function (e) {
 				console.log(JSON.stringify(e));
 				console.log(src[e.index]);

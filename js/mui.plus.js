@@ -1,6 +1,5 @@
 /**
- *带图片的确认框  已经在mui.js 中集成了,但是线上的版本没有引用mui.js 所以不能使用  
- * 只能写在这里使用  下个版本记得改为引用mui.js 和 mui.css
+ *在mui的基础上新加一些常用的功能
  */
 ;(function($, window, document) {
 	var CLASS_POPUP = 'mui-popup';
@@ -120,7 +119,13 @@
             popupElement.parentNode && popupElement.parentNode.removeChild(popupElement);
             popupElement = null;
         };
-        popupElement.addEventListener($.EVENT_MOVE, $.preventDefault);
+		//判断显示的弹框是否是图片选择框,如果是,不能禁用滑动事件,因为多个图片的时候需要滑动选择
+		var imageSelectElement = popupElement.querySelector('.' + CLASS_POPUP_CONFIRM_IMAGE_SELECT);
+		if (imageSelectElement && imageSelectElement.classList.contains(CLASS_POPUP_CONFIRM_IMAGE_SELECT)) {
+			
+		}else{
+			popupElement.addEventListener($.EVENT_MOVE, $.preventDefault);
+		}
         popupElement.addEventListener('webkitTransitionEnd', function(e) {
             if (popupElement && e.target === popupElement && popupElement.classList.contains(CLASS_POPUP_OUT)) {
                 removePopupElement();
