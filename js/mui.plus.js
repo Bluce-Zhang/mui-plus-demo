@@ -286,15 +286,11 @@
 (function($,window,document){
 	
 	$.showLoading = function(message, type) {
-		if($.os.plus && type !== 'div') {
-			$.plusReady(function() {
-				plus.nativeUI.showWaiting(message);
-			});
-		} else {
+		
 			var html = '';
 			html += '<i class="mui-spinner mui-spinner-white"></i>';
 			html += '<p class="text">' + (message || "数据加载中") + '</p>';
-	
+			
 			//遮罩层
 			var mask = document.getElementsByClassName("mui-show-loading-mask");
 			if(mask.length == 0) {
@@ -324,16 +320,12 @@
 				toast[0].innerHTML = html;
 				toast[0].classList.add("loading-visible");
 			}
-		}
+		
 	};
 	
 	//隐藏加载框
 	$.hideLoading = function(callback) {
-		if($.os.plus) {
-			$.plusReady(function() {
-				plus.nativeUI.closeWaiting();
-			});
-		}
+		
 		var mask = document.getElementsByClassName("mui-show-loading-mask");
 		var toast = document.getElementsByClassName("mui-show-loading");
 		if(mask.length > 0) {
