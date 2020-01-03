@@ -17,6 +17,8 @@
 	var CLASS_ACTIVE = 'mui-active';
 	var CLASS_POPUP_SELECT_ITEM = 'mui-popup-select-item';
 	var CLASS_POPUP_CONFIRM_IMAGE = 'mui-popup-confirm-image';
+	var CLASS_POPUP_CONFIRM_IMAGE_SELECT_TITLE='mui-popup-confirm-image-select-title'
+	var CLASS_POPUP_CONFIRM_IMAGE_SELECT_INNER = 'mui-popup-confirm-image-select-inner'
 	var CLASS_POPUP_CONFIRM_IMAGE_SELECT = 'mui-popup-confirm-image-select';
 	var CLASS_POPUP_IMAGE_SELECT = 'mui-popup-image-select';
 	var CLASS_POPUP_ALERT_IMAGE = 'mui-popup-alert-image';
@@ -81,7 +83,8 @@
 		   	imagesSelectHtml += '<div class="'+CLASS_POPUP_IMAGE_SELECT+'">'+'<img src="'+srcs[i]+'">'
 		   	+'</div>'
 		   }
-		   return '<div class="' + CLASS_POPUP_INNER + '"><div class="' + CLASS_POPUP_TITLE + '">' + title + '</div>'
+		   return '<div class="' + CLASS_POPUP_TITLE + ' '+CLASS_POPUP_CONFIRM_IMAGE_SELECT_TITLE+'">' + title + '</div>'+
+		   '<div class="' + CLASS_POPUP_INNER + ' '+ CLASS_POPUP_CONFIRM_IMAGE_SELECT_INNER+'">'
 		   +'<div class="'+CLASS_POPUP_CONFIRM_IMAGE_SELECT+'">'+imagesSelectHtml+'</div>'
 		   +'<div class="' + CLASS_POPUP_TEXT + '">' + message.replace(/\r\n/g, "<br/>").replace(/\n/g, "<br/>") + '</div>' + (extra || '') + '</div>';
 		}else{
